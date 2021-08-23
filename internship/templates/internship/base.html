@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link href="{% static 'internship/bootstrap.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      #text-inf {
+      color: #0998b5 !important;
+      }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="http://www.internship.zuri.team">Zuri Internship</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto float-right">
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#skill">Skill</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div>
+        <div class="bg-light p-5 rounded">
+          <div class="row mx-auto">
+            <div class="col-md-4">
+            <img src="{% static 'media/Makinde.jpg' %}" class="img-thumbnail" style="width: 100%; float: left;" alt="My Picture">
+            </div>
+            <div class="col-md-8 mt-5">
+            <h6 class="text-muted">Frontend || Backend ||  Web Developer</h6>
+            <h1>Makinde Emmanuel</h1>
+            <p>Creative web developer dedicated to developing and optimizing interactive, user friendly and feature-rich websites.<br>Leverage analytical skills and strong attention to detail in order to deliver original and efficient web solutions, provide technical knowledge and expertise, build new websites from start to finish and successfully manage a team of web developers.</p>
+            <p>
+              <a class="btn btn-outline-primary" href="#contact" role="button">Contact Me</a>
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div> 
+        <nav aria-label="breadcrumb">
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item">Phone: 08102913837</li>
+              <li class="breadcrumb-item">Email: emakinde01@gmail.com</li>
+              <li class="breadcrumb-item">LinkedIn: www.linkedin.com/in/makinde-emmanuel</li>
+              <li class="breadcrumb-item">Address: Abeokuta,Ogun-State</li>
+            </ul>
+          </nav>
+
+        
+
+    </div>
+      <div class="container row mt-5">
+        <div class="col-md-6 mb-5">
+          <h3 class="text-success">Work Experience</h3>
+          <hr>
+          <h5>Frontend and Backend Developer - Remote</h5>
+          <h6 class="text-info">Zuri Internship</h6>
+          <h6 class="text-muted">August 2021 - Present</h6>
+          <p>HTML, CSS, JAVASCRIPT, BOOTSTRAP, DJANG0</p>
+          <br>
+
+          <h3 class="text-primary" id="skill">Skill</h3>
+          <hr>
+          <h5>HTML</h5>
+          <div class="progress mb-3" style="height: 15px;">
+            <div class="progress-bar bg-success" style="width: 75%; height: 15px;"></div>
+          </div>
+          <h5>CSS</h5>
+          <div class="progress mb-3" style="height: 15px;">
+            <div class="progress-bar bg-success" style="width: 65%; height: 15px;"></div>
+          </div>
+          <h5>JAVASCRIPT</h5>
+          <div class="progress mb-3" style="height: 15px;">
+            <div class="progress-bar bg-success" style="width: 50%; height: 15px;"></div>
+          </div>
+          <h5>BOOTSTRAP</h5>
+          <div class="progress mb-3" style="height: 15px;">
+            <div class="progress-bar bg-success" style="width: 80%; height: 15px;"></div>
+          </div>
+          <h5>DJANG0</h5>
+          <div class="progress mb-3" style="height: 15px;">
+            <div class="progress-bar bg-success" style="width: 65%; height: 15px;"></div>
+          </div>
+        </div>
+          <div class="col-md-6">
+              <h3 class="text-success">Education</h3>
+              <hr>
+              <h5>Federal College Of Education, Abeokuta</h5>
+              <h6 class="text-muted">2018 - 2021</h6>
+              <h6 class="text-info">NCE in Computer Science/Physics</h6>
+              <br>
+              <h5>Federal University Of Agriculture, Abeokuta</h5>
+              <h6 class="text-muted">2021 - 2024</h6>
+              <h6 class="text-info">BSc. in Physics</h6>
+                <br>
+              <h3 class="text-primary">Strengths</h3>
+              <hr>
+              <h5>Team Work</h5>
+              <h5>Problem Solving</h5>
+              <h5>Creativity</h5>
+              
+          </div>
+
+        </div>
+
+
+      </div>
+      <div class="text-center">
+          <h3 id="contact">Contact Me</h3>
+    </div>
+    <form class="mb-5" method="POST" action="{% url 'home' %}">{% csrf_token %}
+        <div class="mb-3 container">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        {{form.name}}
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          {{form.email}}
+          <label for="Message" class="form-label">Message</label>
+          {{form.message}}
+          <br>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </div>
+      </form>
+
+
+      <img src="{% static 'media/zuri.svg' %}" class="text-center" style="width: 30%; alt="zuri internship">
+
+</body>
+</html>
